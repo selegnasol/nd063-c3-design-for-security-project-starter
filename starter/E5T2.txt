@@ -1,11 +1,11 @@
 # Identify tools that will allow you to do the following:
 
 ## Scan infrastructure as code templates
-Terrascan
 Regula
+Terrascan
 
 ### Example vulnerability
-Unintended ingress traffic from potentially malicious public IP addresses
+Ingress traffic from potentially malicious public IP addresses
 
 ##Scan AMI's or containers for OS vulnerabilities
 AWS Inspector
