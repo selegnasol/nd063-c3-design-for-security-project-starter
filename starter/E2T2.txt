@@ -1,3 +1,14 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+Issues:
+1. S3 bucket logging not enabled
+2. The IAM password policy is not specified
+3. Process 'sshd' is listening on port 22 on the EC2 instance
+
+Recommendations:
+1. Enable S3 bucket logging
+2. Specify a more rigorous IAM password policy.
+3. Close port 22 and all other non-necessary ports on the EC2 instance
+4. Edit WebAppSG security group to remove access to port 22

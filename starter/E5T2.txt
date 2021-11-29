@@ -1,13 +1,20 @@
 # Identify tools that will allow you to do the following:
 
 ## Scan infrastructure as code templates
+Terrascan
+Regula
 
 ### Example vulnerability
+Unintended ingress traffic from potentially malicious public IP addresses
 
-##Scan AMI’s or containers for OS vulnerabilities
+##Scan AMI's or containers for OS vulnerabilities
+AWS Inspector
 
 ### Example vulnerability
+Ability to log into root account over SSH (port 22)
 
 ##Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config
 
 ### Example vulnerability
+IAM role has been assigned a policy that allows admin access

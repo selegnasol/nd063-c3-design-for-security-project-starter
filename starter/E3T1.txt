@@ -1,3 +1,9 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
+i-08f6461bf2dc490c1 is performing SSH brute force attacks against 18.211.210.0. Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password. Finding part: UnauthorizedAccess:EC2/SSHBruteForce
 
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+To detect unauthorized and unexpected activity in AWS environment, GuardDuty analyzes and processes data from AWS CloudTrail event logs, VPC Flow Logs, and DNS logs to detect anomalies involving the following AWS resource types: IAM access keys, EC2 instances, and S3 buckets. While in transit from these data sources to GuardDuty, all of the log data is encrypted. GuardDuty extracts various fields from these logs for profiling and anomaly detection, and then discards the logs.
+
+Sources:
+https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html
+https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#unauthorizedaccess-ec2-sshbruteforce
