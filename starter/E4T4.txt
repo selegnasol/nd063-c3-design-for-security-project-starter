@@ -1,14 +1,15 @@
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
-Add CloudFront and Route53 in front of ALB to mitigate DDoS attacks
+- Place AWS CloudFront and Route53 in front of ALB to mitigate DDoS attacks
+- Add WAF to filter/block undesirable traffic from the internet
 
 # Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
-If the underlying S3 related IAM policies are configured insecurely or incorrectly, creating VPC private endpoints alone would not prevent the unauthorized access to the secrets bucket. Malicious actor can come from within my organization. Certain users (such as contractors) may not need access to the contents of my super secret S3 bucket. We always need to keep least privilege [access] principle in mind!
+No. Malicious actors can still come from within my organization. Certain users (e.g. guests) may not require access to the contents of my secret S3 bucket. We always need to keep the least privilege access principle in mind!
 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
-No. Existing files won't be encrypted by design. Only future files in S3 bucket will be encrypted.
+No. Existing files won't be encrypted by design. However, only future files will be encrypted in my S3 bucket.
 
 # What would happen if the original cloud formation templates are applied to this environment.
-The changes would be overridden. The app would revert to its original state.
+All the changes would be overridden. The app would revert to its original state.
 
 Sources:
 https://aws.amazon.com/blogs/security/how-to-protect-dynamic-web-applications-against-ddos-attacks-by-using-amazon-cloudfront-and-amazon-route-53/

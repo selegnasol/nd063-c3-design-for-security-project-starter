@@ -9,7 +9,7 @@ Issues:
 
 Remediations:
 - Configure minimum password length
-- Close port 22 and all other non-necessary ports on the EC2 instance
+- Reconfigure SSH service: close port 22 / update inbound rules
 - Enable default S3 server-side encryption
 
 Sources: AWS Security Hub/Inspector logs

@@ -1,10 +1,16 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
-I ran an intensive Zenmap scan to identify/confirm open ports and security issues on the application server with public IP address [18.211.210.0]. Ports 22 and 5000 appear to be open. If SSH service is configured insecurely in EC2 instance, this would allow a malicious user to bruteforce into ROOT account over port 22. See attached screenshot (E1T4_zenmap.png)
+I ran an intensive Zenmap scan to identify/confirm open TCP ports and security issues associated with my application server (Web Service Instance - C3) with the public IP address [18.211.210.0]. Ports 22 and 5000 appear to be open. Open ports are vulnerable to various types of attacks from the internet. E.g. if SSH service is configured insecurely in EC2 instance, this would allow a malicious user to bruteforce into ROOT account by attacking port 22 using a tool like Hydra. See attached screenshot (E1T4_zenmap.png)
 
 # Poor practice 2
-WebAppSG security group is not configured properly. This sec group allows all egress traffic from the server, even though the application is behind an application load balancer. Additionally, this sec group allows ingress traffic to the web service instance on ports 80 and 5000. This exposes EC2 instance to certain types of attacks from the internet.
+WebAppSG security group is not configured properly. This sec group allows all egress traffic from the server, even though the application is sitting behind ALB. Additionally, this sec group allows ingress traffic to the web service instance on ports 80 and 5000. This exposes EC2 instance to attacks.
 
 # Poor practice 3
-All secure communication should be done over port 443 (SSL/TLS), not 80! Port 80 is vulnerable to these types of attacks: SQL injections, cross-site request forgeries, XSS, and buffer overruns. Furthermore, all communication between a user and the server can potentially be sniffed by an attacker (MITM) sitting on the same WLAN/LAN network.
+All secure communication should be carried over port 443 (SSL/TLS), not 80! Port 80 is an insecure port which is vulnerable to the following attacks: SQL injections, cross-site request forgeries, cross-site scripting, and buffer overruns. Also, communication between a user and the server can potentially be sniffed by an attacker (MITM*) using a tool like 'ettercap-ng'. Attakers can sniff traffic without having to strip off SSL certificates.
+
+Sources:
+https://nmap.org/
+https://www.ettercap-project.org/
+
+*MITM = man-in-the-middle

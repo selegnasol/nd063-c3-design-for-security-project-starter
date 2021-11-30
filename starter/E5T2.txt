@@ -2,10 +2,10 @@
 
 ## Scan infrastructure as code templates
 Regula
-Terrascan
+Fugue/Terrascan
 
 ### Example vulnerability
-Ingress traffic from potentially malicious public IP addresses
+Ingress traffic from a potentially malicious public IP address range
 
 ##Scan AMI's or containers for OS vulnerabilities
 AWS Inspector
@@ -17,4 +17,10 @@ Ability to log into root account over SSH (port 22)
 AWS Config
 
 ### Example vulnerability
-IAM role has been assigned a policy that allows admin access
+Alumni is given admin rights via a mistake made in IAM
+
+Sources:
+https://aws.amazon.com/blogs/devops/building-end-to-end-aws-devsecops-ci-cd-pipeline-with-open-source-sca-sast-and-dast-tools/
+https://github.com/fugue/regula/blob/master/README.md
+https://github.com/accurics/terrascan/blob/master/README.md
+https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
