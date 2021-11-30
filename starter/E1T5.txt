@@ -10,7 +10,7 @@ WebAppSG security group is not configured properly. This sec group allows all eg
 All secure communication should be carried over port 443 (SSL/TLS), not 80! Port 80 is an insecure port which is vulnerable to the following attacks: SQL injections, cross-site request forgeries, cross-site scripting, and buffer overruns. Also, communication between a user and the server can potentially be sniffed by an attacker (MITM*) using a tool like '(b)ettercap-ng'. Attakers can sniff traffic without having to strip off SSL certificates.
 
 # Poor practice 4
-Looks like ELB volume associated with the 'Web Service Instance - C3' EC2 instance is not encrypted! Data can be compromised.
+Looks like EBS volume ('vol-004fb4f9ff5d91455') associated with the 'Web Service Instance - C3' EC2 instance is not encrypted! Data can be compromised.
 
 Sources:
 https://nmap.org/
