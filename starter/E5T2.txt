@@ -17,7 +17,7 @@ Ability to log into root account over SSH (port 22)
 AWS Config
 
 ### Example vulnerability
-Alumni is given admin rights via a mistake made in IAM
+College alumni is given admin rights via a mistake made in IAM
 
 Sources:
 https://aws.amazon.com/blogs/devops/building-end-to-end-aws-devsecops-ci-cd-pipeline-with-open-source-sca-sast-and-dast-tools/
